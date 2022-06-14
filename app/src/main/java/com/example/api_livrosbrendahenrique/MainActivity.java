@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try {
             JSONObject jsonObject = new JSONObject(data);
-            JSONArray itemsArray = jsonObject.getJSONArray("items");
+            JSONArray itemsArray = jsonObject.getJSONArray("ISBN:0451526538");
             int i = 0;
             String titulo = null;
             String autor = null;
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
             if (titulo != null) {
                 nomeTitulo.setText(titulo);
-                autor = autor.replaceAll("\\\"", "");
+//                autor = autor.replaceAll("\\\"", "");
                 nomeAutor.setText(autor);
             } else {
                 nomeTitulo.setText(R.string.campo_null);
@@ -128,10 +128,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             e.printStackTrace();
         }
     }
-
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
     }
-
-
 }

@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
-    private static final String LIVROS_URL = "https://openlibrary.org/api/books?format=json&jscmd=data&bibkeys=ISBN:0451526538";
+    private static final String LIVROS_URL = "https://openlibrary.org/api/books/?format=json&jscmd=data&bibkeys=ISBN:0451526538";
 //    private static final String QUERY_PARAM = "q";
 //    private static final String MAX_RESULTS = "maxResults";
 //    private static final String TIPO_IMPRESSAO = "printType";
