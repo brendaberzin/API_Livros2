@@ -32,6 +32,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private EditText nomeLivro;
+    private String ISBNDigitado;
     private TextView nomeTitulo;
     private TextView nomeAutor;
     @Override
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
     public void buscaLivros(View view) {
         String queryString = nomeLivro.getText().toString();
+        ISBNDigitado = queryString;
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputManager != null) {
@@ -93,29 +95,29 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
         try {
             JSONObject jsonObject = new JSONObject(data);
-            JSONArray itemsArray = jsonObject.getJSONArray("ISBN:0451526538");
+            JSONObject jsonObject2 = jsonObject.getJSONObject(ISBNDigitado);
+            String titulo = jsonObject2.getString("title");
+            JSONArray itemsArray = jsonObject2.getJSONArray("authors");
+
             int i = 0;
-            String titulo = null;
             String autor = null;
 
             while (i < itemsArray.length() &&
-                    (titulo == null)) {
+                    (autor == null)) {
                 JSONObject book = itemsArray.getJSONObject(i);
-                JSONObject authors = book.getJSONObject("authors");
 
                 try {
-                    titulo = book.getString("title");
-                    autor = authors.getString("name");
+                    autor = book.getString("name");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 i++;
             }
-            if (titulo != null) {
-                nomeTitulo.setText(titulo);
+            if (titulo != null && autor != null) {
+                nomeTitulo.setText("Título: " + titulo);
 //                autor = autor.replaceAll("\\\"", "");
-                nomeAutor.setText(autor);
+                nomeAutor.setText("Autor: " + autor);
             } else {
                 nomeTitulo.setText(R.string.campo_null);
                 nomeAutor.setText(R.string.vazio);

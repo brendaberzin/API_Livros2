@@ -13,10 +13,10 @@ import java.net.URL;
 
 public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
-    private static final String LIVROS_URL = "https://openlibrary.org/api/books/?format=json&jscmd=data&bibkeys=ISBN:0451526538";
-//    private static final String QUERY_PARAM = "q";
+    private static final String LIVROS_URL = "https://openlibrary.org/api/books/?format=json&jscmd=data&bibkeys";
+    private static final String QUERY_PARAM = "bibkeys";
 //    private static final String MAX_RESULTS = "maxResults";
-//    private static final String TIPO_IMPRESSAO = "printType";
+    private static final String TIPO_IMPRESSAO = "printType";
 
     static String buscaInfosLivro(String queryString) {
         HttpURLConnection urlConnection = null;
@@ -24,9 +24,9 @@ public class NetworkUtils {
         String bookJSONString = null;
         try {
             Uri builtURI = Uri.parse(LIVROS_URL).buildUpon()
-//                    .appendQueryParameter(QUERY_PARAM, queryString)
+                    .appendQueryParameter(QUERY_PARAM, queryString)
 //                    .appendQueryParameter(MAX_RESULTS, "10")
-//                    .appendQueryParameter(TIPO_IMPRESSAO, "books")
+                    .appendQueryParameter(TIPO_IMPRESSAO, "books")
                     .build();
             URL requestURL = new URL(builtURI.toString());
             urlConnection = (HttpURLConnection) requestURL.openConnection();
