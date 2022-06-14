@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">API_LivrosBrendaHenrique</string>
+    <string name="sem_internet">Sem conexão com internet</string>
+    <string name="vazio" />
+    <string name="carregando">Carregando...</string>
+    <string name="campo_null">Insira um livro</string>
+</resources>
