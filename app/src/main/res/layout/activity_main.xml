@@ -85,25 +85,25 @@
 
         <TextView
             android:id="@+id/titulo"
-            android:layout_width="wrap_content"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="80dp"
             android:text="Título:"
             android:textColor="#081147"
-            android:textSize="20sp"
+            android:textSize="34sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbar" />
 
         <TextView
             android:id="@+id/autor"
-            android:layout_width="wrap_content"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="530dp"
             android:text="Autor:"
             android:textColor="#081147"
-            android:textSize="20sp"
+            android:textSize="34sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
