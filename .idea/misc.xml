@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/henri/AndroidStudioProjects/API_LivrosBrendaHenrique/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/BRENDASANCHESBERZIN/AndroidStudioProjects/API_LivrosBrendaHenrique/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/BRENDASANCHESBERZIN/AndroidStudioProjects/API_LivrosBrendaHenrique/app/src/main/res/layout/appwidget.xml" value="0.16394927536231885" />
+        <entry key="..\:/Users/BRENDASANCHESBERZIN/AndroidStudioProjects/API_LivrosBrendaHenrique/app/src/main/res/xml/example_appwidget_info.xml" value="0.16394927536231885" />
+        <entry key="..\:/Users/henri/AndroidStudioProjects/API_LivrosBrendaHenrique/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>
   </component>
